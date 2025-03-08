@@ -1,6 +1,6 @@
 {
   "name": "portfolio-website",
-  "homepage":"https://thenormalcoder.github.io/Port",
+  // "homepage":"https://thenormalcoder.github.io/Port",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -9,8 +9,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d dist"
+    // "predeploy":"npm run build",
+    // "deploy":"gh-pages -d dist"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
