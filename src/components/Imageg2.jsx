@@ -1,12 +1,14 @@
 
 import React, { useState, useEffect } from 'react';
+import photoImage from '../assets/sparkprofilephoto.jpg';
 
 const images = [
- 'sparkprofilephoto.jpg',
- 'sparkprofilephoto.jpg',
- 'sparkprofilephoto.jpg',
- 'sparkprofilephoto.jpg',
- 'sparkprofilephoto.jpg',
+  { src: photoImage },
+  { src: photoImage },
+  { src: photoImage },
+  { src: photoImage },
+  { src: photoImage },
+  { src: photoImage },
 ];
 
 export default function Imageg2() {
@@ -45,7 +47,7 @@ export default function Imageg2() {
            style={{ transform: `translateX(-${currentIndex * (100 / images.length)}%)` }}>
         {images.map((img, index) => (
           <div key={index} className="w-1/3 h-72 flex-shrink-0 px-3 ">
-            <img src={img} alt={`Slide ${index}`} className="w-full h-full object-cover border-4 border-white rounded-3xl" />
+            <img src={img.src} alt={`Slide ${index}`} className="w-full h-full object-cover border-4 border-white rounded-3xl" />
           </div>
         ))}
       </div>
