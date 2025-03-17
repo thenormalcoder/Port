@@ -1,12 +1,16 @@
 import React from 'react'
-import Header from './Header'
+
 import Homepage from '../pages/Homepage'
+import GridDistortion from './GridDistortion'
+import Header from '../pages/Header'
+import Header1 from './Header1'
+
 
 const Firstpage = () => {
   return (
     <div className='flex'>
-
-      <Header/>
+      {/* <Header/> */}
+      <Header1/>
 
     </div>
   )

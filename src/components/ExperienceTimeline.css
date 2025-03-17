@@ -1,0 +1,57 @@
+
+.timeline-container {
+    position: relative;
+    width: 100%;
+    padding: 50px 0;
+    height: 90vh; /* Adjust based on the number of experiences */
+    background-color: white;
+  }
+  
+  .vertical-line {
+    position: absolute;
+    left: 50%;
+    width: 4px;
+    background-color: black;
+    top: 0;
+    bottom: 0;
+    z-index: 1; /* Ensures the line is behind the experience cards */
+  }
+  
+  .experience-block {
+    position: relative;
+    width: 30%;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: gray;
+    color: white;
+     border-radius: 5px; 
+    border-top: 10px;
+   border: 3px solid black;
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease;
+    /* z-index: 2; */
+    margin-bottom: 25px; /* Adds space between blocks */
+  }
+  
+  .experience-block.left {
+     right: 0%;
+    transform: translateX(50%); /* Start from far left */
+  }
+  
+  .experience-block.right {
+    left: 33%;
+    transform: translateX(100%); /* Start from far right */
+  }
+  
+  .experience-block.visible {
+    opacity: 1;
+    transform: translateX(-55%); /* Bring experience to the middle */
+  }
+  
+  h3, h4, p, span {
+    margin: 10px 0;
+    color: white;
+  }
+  

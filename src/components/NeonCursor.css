@@ -1,0 +1,44 @@
+
+  .neon-cursor-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9999; /* Ensure the cursor is on top of everything */
+  }
+  
+  .cursor-main {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgb(34, 34, 34); /* Dark grey outline for contrast */
+    border-radius: 50%;
+    background-color: rgba(34, 34, 34, 0.5); /* Dark grey inner fill */
+    mix-blend-mode: difference; /* Blending effect */
+    pointer-events: none;
+  }
+  
+  .cursor-trail {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border: 2px solid rgba(0, 0, 0, 0.7); /* Trail with dark color */
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.1); /* Slight inner fill */
+    opacity: 0.5; /* Make trail slightly transparent */
+    pointer-events: none;
+  }
+  
+  .cursor-glow {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.4); /* Darker glow */
+    opacity: 0.4; /* Make glow more transparent */
+    pointer-events: none;
+  }
+  

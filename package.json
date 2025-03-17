@@ -1,6 +1,7 @@
 {
  
   "private": true,
+ 
   "version": "0.0.0",
  
   "type": "module",
@@ -8,18 +9,16 @@
   "scripts": {
  
    
-    "dev": "vite",
-  "build": "vite build",
-  
+  "dev": "vite",
  
-  
+   
+  "build": "vite build",
  
    
   "lint": "eslint .",
  
    
   "preview": "vite preview"
- 
  
   },
  
@@ -41,10 +40,13 @@
   "emailjs-com": "^3.2.0",
  
    
-  "framer-motion": "^12.4.7",
+  "framer-motion": "^12.5.0",
  
    
   "gh-pages": "^6.3.0",
+ 
+   
+  "gsap": "^3.12.7",
  
    
   "lucide-react": "^0.475.0",
@@ -53,7 +55,13 @@
   "maath": "^0.10.8",
  
    
+  "ogl": "^1.0.11",
+ 
+   
   "react": "^18.3.1",
+ 
+   
+  "react-chrono": "^2.6.1",
  
    
   "react-dom": "^18.3.1",
@@ -72,6 +80,12 @@
  
    
   "react-vertical-timeline-component": "^3.5.3",
+ 
+   
+  "styled-components": "^6.1.15",
+ 
+   
+  "three": "^0.174.0",
  
    
   "typed.js": "^2.1.0"

@@ -1,5 +1,6 @@
 import React from 'react';
 import Pcard from './Pcard';
+import Pcard1 from './Pcard1';
 
 
 
@@ -13,16 +14,16 @@ const Projects = () => {
     <p className='text-black px-20'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quis tenetur doloribus illo provident numquam est? Eveniet commodi excepturi repellendus. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime aliquam eum velit quae, ratione accusamus commodi dolorem accusantium minus repellat. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, doloribus? Dicta tenetur officiis, corrupti iure molestiae a eaque est tempore!</p>
     <div className='flex justify-around items-center px-40 '>
         
-    <Pcard/>
-    <Pcard/>
-    <Pcard/>
+    <Pcard1/>
+    <Pcard1/>
+    <Pcard1/>
     </div>
-    <div className='flex justify-around items-center px-64 '>
+    {/* <div className='flex justify-around items-center px-64 '>
         
         <Pcard/>
         <Pcard/>
         
-        </div>
+        </div> */}
     
         </div>
     </>

@@ -122,18 +122,31 @@
 
 // new code
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import './App.css'
 import Homepage from './pages/Homepage'
 import Navbar from './pages/Navbar'
 import Aboutme from './pages/Aboutme'
-import Header from './components/Header'
+import Header from './components/Header1'
 import Firstpage from './components/Firstpage'
 import Projects from './components/Projects'
 import Achievements from './components/Achievements'
 import Certificate from './components/Certificate'
 import Cfrom from './components/Cfrom'
 import Footer from './components/Footer'
+import FollowCursor from './components/FollowCursor'
+import NeonCursor from './components/NeonCursor'
+import GridDistortion from './components/GridDistortion'
+import Griduse from './components/Griduse'
+import LetterGlitch from './components/LetterGlitch'
+import GridMotionuse from './components/GridMotionuse'
+import { Loader } from 'lucide-react'
+import Card from './components/Card'
+import Experience from './components/Experience'
+import ExperienceTimeline from './components/ExperienceTimeline'
+import CircularGallery from './components/CircularGallery'
+import CircularGalleryuse from './components/CircularGalleryuse'
+import RolllingGalleryuse from './components/RolllingGalleryuse'
 // import Navbar from './components/Navbar'
 // import Header from './components/Header'
 // import Aboutme from './components/Aboutme'
@@ -149,21 +162,85 @@ import Footer from './components/Footer'
 // import Homepage from './components/Homepage'
 
 function App() {
+  const [loading, setLoading] = useState(true); // State to manage loading
 
-  return (
-    <>
-  
-    <Navbar/>
-   <Firstpage/>
-    <Aboutme/>
-    <Projects/>
- <Achievements/>
- <Certificate/>
- <Cfrom/>
- <Footer/>
+  useEffect(() => {
+    // Simulate loading time (like fetching data or initializing app)
+    const timer = setTimeout(() => {
+      setLoading(false); // Hide loader after data or component is loaded
+    }, 2000); // 2 seconds delay, you can adjust this based on your needs
+
+    return () => clearTimeout(timer); // Cleanup timer on unmount
+  }, []);
+
+//   return (
+//     <>
+//      {/* <FollowCursor/> */}
+//      {/* <Griduse/> */}
+//      {/* <LetterGlitch
+//   glitchSpeed={50}
+//   centerVignette={true}
+//   outerVignette={false}
+//   smooth={true}
+// /> */}
+//  {loading ? (
+//         // Show loader when loading is true
+//         <Loader />
+//       ) : (
+// <GridMotionuse/>
+//      <NeonCursor/>
+//     <Navbar/>
+//    <Firstpage/>
+//     <Aboutme/>
+//     <Projects/>
+//  <Achievements/>
+//  <Certificate/>
+//  <Cfrom/>
+//  <Footer/>
+      
+//       </>
+      
+//   )
+// )
+// }
+
+// export default App
+
+return (
+  <>
+    {/* <FollowCursor/> */}
+    {/* <Griduse/> */}
+    {/* <LetterGlitch
+    glitchSpeed={50}
+    centerVignette={true}
+    outerVignette={false}
+    smooth={true}
+    /> */}
+    {loading ? (
+      // Show loader when loading is true
+      <Loader />
+    ) : (
+      <>
+        <GridMotionuse />
+        <NeonCursor />
+        <Navbar />
+        <Firstpage />
+        {/* <Aboutme /> */}
+        <ExperienceTimeline/>
+        <Projects />
+        <Achievements />
+        <Certificate />
+        
+
+       {/* <CircularGalleryuse/> */}
+       {/* <RolllingGalleryuse/> */}
+        <Cfrom />
+        <Footer />
+        {/* <Card/> */}
+        
       </>
-    
-  )
+    )}
+  </>
+);
 }
-
 export default App
