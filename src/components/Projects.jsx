@@ -1,8 +1,8 @@
 import React from 'react';
 import Pcard from './Pcard';
 import Pcard1 from './Pcard1';
-
-
+import Pcard2 from './Pcard2';
+import Pcard3 from './Pcard3';
 
 const Projects = () => {
  
@@ -15,8 +15,8 @@ const Projects = () => {
     <div className='flex justify-around items-center px-40 '>
         
     <Pcard1/>
-    <Pcard1/>
-    <Pcard1/>
+    <Pcard2/>
+    <Pcard3/>
     </div>
     {/* <div className='flex justify-around items-center px-64 '>
         

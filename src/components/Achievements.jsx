@@ -1,6 +1,8 @@
 import React from 'react'
 import Card1 from './Card1'
 import Tiltedcarduse from './Tiltedcarduse'
+import Tiltedcarduse1 from './Tiltedcarduse1'
+import Tiltedcarduse2 from './Tiltedcarduse2'
 
 
 const Achievements = () => {
@@ -11,10 +13,10 @@ const Achievements = () => {
        <p className='text-black px-20 pb-8'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quis tenetur doloribus illo provident numquam est? Eveniet commodi excepturi repellendus. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maxime aliquam eum velit quae, ratione accusamus commodi dolorem accusantium minus repellat. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat, doloribus? Dicta tenetur officiis, corrupti iure molestiae a eaque est tempore!</p>
        <div className='flex items-center justify-between px-80 mb-10'>
        <Tiltedcarduse/>
-       <Tiltedcarduse/></div>
+       <Tiltedcarduse1/></div>
        <div className='flex items-center justify-between px-80 '>
-       <Tiltedcarduse/>
-       <Tiltedcarduse/></div>
+       <Tiltedcarduse2/>
+       </div>
        
     </div>
   )

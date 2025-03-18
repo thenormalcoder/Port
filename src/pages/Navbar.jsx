@@ -76,7 +76,7 @@ const Navbar = ({ onExperienceClick }) => {
       
       {/* Middle - Links */}
       <div className="hidden md:flex space-x-6">
-        <ScrollLink to="about" smooth={true} duration={500} className="cursor-pointer text-gray-600 px-3 py-1 rounded-lg border-2 border-black hover:text-white transition hover:bg-blue-800 hover:font-bold">About</ScrollLink>
+        {/* <ScrollLink to="about" smooth={true} duration={500} className="cursor-pointer text-gray-600 px-3 py-1 rounded-lg border-2 border-black hover:text-white transition hover:bg-blue-800 hover:font-bold">About</ScrollLink> */}
         <ScrollLink 
           to="experience" 
           smooth={true} 

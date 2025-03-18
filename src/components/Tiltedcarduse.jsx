@@ -1,13 +1,14 @@
 import React from 'react'
 import TiltedCard from './TiltedCard'
+import ag from '../assets/AgartalaHackathon.jpg';
 
 const Tiltedcarduse = () => {
   return (
     <div>
      <TiltedCard
-  imageSrc="https://i.scdn.co/image/ab67616d0000b273d9985092cd88bffd97653b58"
+  imageSrc={ag}
   altText="Kendrick Lamar - GNX Album Cover"
-  captionText="Achievement"
+  captionText="Arjuna Hackathon Grand Finalist"
   containerHeight="350px"
   containerWidth="350px"
   imageHeight="300px"
