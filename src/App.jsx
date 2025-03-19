@@ -147,6 +147,7 @@ import ExperienceTimeline from './components/ExperienceTimeline'
 import CircularGallery from './components/CircularGallery'
 import CircularGalleryuse from './components/CircularGalleryuse'
 import RolllingGalleryuse from './components/RolllingGalleryuse'
+import GlitchTextuse from './components/GlitchTextuse'
 // import Navbar from './components/Navbar'
 // import Header from './components/Header'
 // import Aboutme from './components/Aboutme'
@@ -168,7 +169,7 @@ function App() {
     // Simulate loading time (like fetching data or initializing app)
     const timer = setTimeout(() => {
       setLoading(false); // Hide loader after data or component is loaded
-    }, 2000); // 2 seconds delay, you can adjust this based on your needs
+    }, 3000); // 2 seconds delay, you can adjust this based on your needs
 
     return () => clearTimeout(timer); // Cleanup timer on unmount
   }, []);
@@ -218,7 +219,7 @@ return (
     /> */}
     {loading ? (
       // Show loader when loading is true
-      <Loader />
+      <GlitchTextuse/>
     ) : (
       <>
         <GridMotionuse />

@@ -47,11 +47,11 @@ const Contact = () => {
 
   return (
     // <div className="flex justify-center items-center w-1/2 h-screen bg-gray-100 p-4 text-black">
-      <form onSubmit={handleSubmit} className="w-full max-w-lg bg-white p-8 rounded-lg shadow-md">
+      <form onSubmit={handleSubmit} className="w-full max-w-lg p-8 rounded-lg shadow-md border-2 border-black font-bold text-black bg-gray-400">
         <h2 className="text-3xl font-semibold text-center mb-6">Contact Me</h2>
 
         <div className="mb-4">
-          <label htmlFor="name" className="block text-sm font-medium text-gray-700">
+          <label htmlFor="name" className="block text-sm  font-bold text-black">
             Name
           </label>
           <input
@@ -65,7 +65,7 @@ const Contact = () => {
         </div>
 
         <div className="mb-4">
-          <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+          <label htmlFor="email" className="block text-sm font-bold">
             Email
           </label>
           <input
@@ -79,7 +79,7 @@ const Contact = () => {
         </div>
 
         <div className="mb-6">
-          <label htmlFor="message" className="block text-sm font-medium text-gray-700">
+          <label htmlFor="message" className="block text-sm font-bold ">
             Message
           </label>
           <textarea
@@ -102,7 +102,7 @@ const Contact = () => {
         </div>
 
         {isSent && (
-          <p className="mt-4 text-green-500 text-center">Your message has been sent successfully!</p>
+          <p className=" border-4 border-green-600 mt-4 text-white text-center font-bold">Your message has been sent successfully!</p>
         )}
         {errorMessage && (
           <p className="mt-4 text-red-500 text-center">{errorMessage}</p>

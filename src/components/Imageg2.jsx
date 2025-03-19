@@ -14,9 +14,9 @@ const images = [
   { src: c1 },
   { src: c2 },
   { src: c3 },
+  { src: c6 },
   { src: c4 },
   { src: c5 },
-  { src: c6 },
 ];
 
 export default function Imageg2() {
