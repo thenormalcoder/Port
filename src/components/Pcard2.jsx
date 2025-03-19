@@ -42,7 +42,7 @@ export default function Pcard2() {
           alt='Card image'
           className='w-72 h-64 object-cover rounded-t-xl mb-1 cursor-pointer absolute'
         />
-        <a href="https://github.com/thenormalcoder" target="_blank" rel="noopener noreferrer">
+        <a href="https://github.com/thenormalcoder/Deployop2" target="_blank" rel="noopener noreferrer">
                <img src={git1} alt="" className='relative left-0 w-12 h-10 rounded-xl' />
                  
                </a>

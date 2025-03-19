@@ -38,8 +38,8 @@ const ExperienceTimeline = () => {
 
   return (
     <>
-    <div id='experience' className='flex flex-col mt-20 '>
-    <h1  className='font-bold text-4xl text-center mx-auto mt-16' >Experiences</h1>
+    <div id='experience' className='flex flex-col mt-24 '>
+    <h1  className='font-bold text-4xl text-center mx-auto mt-24' >Experiences</h1>
     <div className="timeline-container "  >
       <div className="vertical-line "></div>
       {experiences.map((exp, index) => (
