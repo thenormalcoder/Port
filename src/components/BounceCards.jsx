@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { gsap } from "gsap";
 import "./BounceCards.css";
-
+import g1 from '../assets/g1.png';
 export default function BounceCards({
   className = "",
   images = [],

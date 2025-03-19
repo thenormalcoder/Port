@@ -1,13 +1,17 @@
 import React from 'react'
 import BounceCards from './BounceCards';
-
+import g1 from '../assets/g1.png';
+import g2 from '../assets/g2.png';
+import g3 from '../assets/g3.png';
+import g4 from '../assets/g4.png';
+import g5 from '../assets/g5.png';
 const BounceCardsuse = () => {
     const images = [
-        "https://picsum.photos/400/400?grayscale",
-        "https://picsum.photos/500/500?grayscale",
-        "https://picsum.photos/600/600?grayscale",
-        "https://picsum.photos/700/700?grayscale",
-        "https://picsum.photos/300/300?grayscale"
+        g1,
+        g2,
+        g3,
+        g4,
+        g5,
       ];
       
       const transformStyles = [
