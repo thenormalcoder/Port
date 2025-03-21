@@ -21,7 +21,7 @@ const Header1 = () => {
   }, []);
 
   return (
-    <div className=' flex flex-col justify-center items-center  mt-16 text-center px-48 py-10'>
+    <div className=' flex flex-col justify-center items-center  mt-24 text-center md:px-48 md:py-10'>
     
     <img
         src="https://png.pngtree.com/png-clipart/20230322/original/pngtree-realistic-astronaut-illustration-png-image_8999483.png"
@@ -35,7 +35,7 @@ const Header1 = () => {
         
       </h1>
       <h2 className='text-white font-bold'>"Driven Computer Science student from NIT Manipur, specializing in full-stack development, DSA, and AI-powered solutions, focused on crafting innovative, scalable technologies through impactful projects."</h2>
-      <div className='flex px-20 justify-around mt-10'>
+      <div className='flex px-20 justify-around mt-10 '>
      <BasicButton1/>
      <BasicButton/>
       </div>

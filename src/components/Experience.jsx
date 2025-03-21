@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import './Experience.css'; // Custom CSS file
+import './Experience.css'; 
 
 const experiences = [
   {
@@ -51,7 +51,7 @@ const Experience = () => {
             </div>
           </motion.div>
         ))}
-        <div className="timeline-line"></div>
+        <div className="md:timeline-line"></div>
       </div>
     </div>
   );

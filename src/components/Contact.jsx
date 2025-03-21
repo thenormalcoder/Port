@@ -47,7 +47,7 @@ const Contact = () => {
 
   return (
     // <div className="flex justify-center items-center w-1/2 h-screen bg-gray-100 p-4 text-black">
-      <form onSubmit={handleSubmit} className="w-full max-w-lg p-8 rounded-lg shadow-md border-2 border-black font-bold text-black bg-gray-400">
+      <form onSubmit={handleSubmit} className="md:w-full md:max-w-lg w-[350px] h-[500px] p-8 rounded-lg shadow-md border-2 border-black font-bold text-black bg-gray-400">
         <h2 className="text-3xl font-semibold text-center mb-6">Contact Me</h2>
 
         <div className="mb-4">

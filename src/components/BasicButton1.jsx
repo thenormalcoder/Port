@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const BasicButton1 = () => {
   return (
     <StyledWrapper>
-      <a href="https://unstop.com/u/explorer007"><button type="button" className="button mx-5">
+      <a href="https://unstop.com/u/explorer007"><button type="button" className="button md:mx-5 md:button1">
         <span className="fold" />
         <div className="points_wrapper">
           <i className="point" />
@@ -48,6 +48,27 @@ const StyledWrapper = styled.div`
     border: none;
     outline: none;
     padding: 8px 10px;
+  }
+    .button1 {
+    --h-button: 10px;
+    --w-button: 30px;
+    --round: 0.75rem;
+    cursor: pointer;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.25s ease;
+    background: radial-gradient(
+        65.28% 65.28% at 50% 100%,
+        rgba(223, 113, 255, 0.8) 0%,
+        rgba(223, 113, 255, 0) 100%
+      ),
+      linear-gradient(0deg, #7a5af8, #7a5af8);
+    border-radius: var(--round);
+    border: none;
+    outline: none;
   }
   .button::before,
   .button::after {

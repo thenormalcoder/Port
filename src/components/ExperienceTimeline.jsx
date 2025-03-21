@@ -39,13 +39,13 @@ const ExperienceTimeline = () => {
   return (
     <>
     <div id='experience' className='flex flex-col mt-24 '>
-    <h1  className='font-bold text-4xl text-center mx-auto mt-24' >Experiences</h1>
-    <div className="timeline-container "  >
+    <h1  className='font-bold text-4xl text-center mx-auto mt-36 md:mt-24' >Experiences</h1>
+    <div className="timeline-container md:flex md:flex-col "  >
       <div className="vertical-line "></div>
       {experiences.map((exp, index) => (
         <div
           key={index}
-          className={`experience-block experience-block:hover ${index % 2 === 0 ? 'left' : 'right'} ${
+          className={`experience-block ${index % 2 === 0 ? 'left' : 'right'} ${
             index <= activeIndex ? 'visible' : ''
           }`}
         >

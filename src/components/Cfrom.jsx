@@ -6,7 +6,7 @@ import BounceCardsuse from './BounceCardsuse'
 
 const Cfrom = () => {
   return (
-    <div className='flex justify-evenly items-center'>
+    <div className='flex justify-evenly items-center flex-col md:flex-row'>
     
     <BounceCardsuse/>
       <Contact/>

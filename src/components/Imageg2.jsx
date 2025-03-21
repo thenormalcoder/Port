@@ -54,7 +54,7 @@ export default function Imageg2() {
         style={{ transform: `translateX(-${currentIndex * (100 / images.length)}%)` }}
       >
         {images.map((img, index) => (
-          <div key={index} className="w-1/3 h-72 flex-shrink-0 px-3">
+          <div key={index} className="md:w-1/3 w-full h-64 md:h-72 flex-shrink-0 px-3">
             <img
               src={img.src}
               alt={`Slide ${index}`}
