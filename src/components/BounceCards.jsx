@@ -1,7 +1,140 @@
-import { useEffect } from "react";
+// import { useEffect } from "react";
+// import { gsap } from "gsap";
+// import "./BounceCards.css";
+// import g1 from '../assets/g1.png';
+// export default function BounceCards({
+//   className = "",
+//   images = [],
+//   containerWidth = 400,
+//   containerHeight = 400,
+//   animationDelay = 0.5,
+//   animationStagger = 0.06,
+//   easeType = "elastic.out(1, 0.8)",
+//   transformStyles = [
+//     "rotate(10deg) translate(-170px)",
+//     "rotate(5deg) translate(-85px)",
+//     "rotate(-3deg)",
+//     "rotate(-10deg) translate(85px)",
+//     "rotate(2deg) translate(170px)"
+//   ],
+//   enableHover = true
+// }) {
+//   useEffect(() => {
+//     gsap.fromTo(
+//       ".card",
+//       { scale: 0 },
+//       {
+//         scale: 1,
+//         stagger: animationStagger,
+//         ease: easeType,
+//         delay: animationDelay
+//       }
+//     );
+//   }, [animationStagger, easeType, animationDelay]);
+
+//   const getNoRotationTransform = (transformStr) => {
+//     const hasRotate = /rotate\([\s\S]*?\)/.test(transformStr);
+//     if (hasRotate) {
+//       return transformStr.replace(/rotate\([\s\S]*?\)/, "rotate(0deg)");
+//     } else if (transformStr === "none") {
+//       return "rotate(0deg)";
+//     } else {
+//       return `${transformStr} rotate(0deg)`;
+//     }
+//   };
+
+//   const getPushedTransform = (baseTransform, offsetX) => {
+//     const translateRegex = /translate\(([-0-9.]+)px\)/;
+//     const match = baseTransform.match(translateRegex);
+//     if (match) {
+//       const currentX = parseFloat(match[1]);
+//       const newX = currentX + offsetX;
+//       return baseTransform.replace(translateRegex, `translate(${newX}px)`);
+//     } else {
+//       return baseTransform === "none"
+//         ? `translate(${offsetX}px)`
+//         : `${baseTransform} translate(${offsetX}px)`;
+//     }
+//   };
+
+//   const pushSiblings = (hoveredIdx) => {
+//     if (!enableHover) return;
+//     images.forEach((_, i) => {
+//       gsap.killTweensOf(`.card-${i}`);
+
+//       const baseTransform = transformStyles[i] || "none";
+
+//       if (i === hoveredIdx) {
+//         const noRotationTransform = getNoRotationTransform(baseTransform);
+//         gsap.to(`.card-${i}`, {
+//           transform: noRotationTransform,
+//           duration: 0.4,
+//           ease: "back.out(1.4)",
+//           overwrite: "auto"
+//         });
+//       } else {
+//         const offsetX = i < hoveredIdx ? -160 : 160;
+//         const pushedTransform = getPushedTransform(baseTransform, offsetX);
+
+//         const distance = Math.abs(hoveredIdx - i);
+//         const delay = distance * 0.05;
+
+//         gsap.to(`.card-${i}`, {
+//           transform: pushedTransform,
+//           duration: 0.4,
+//           ease: "back.out(1.4)",
+//           delay,
+//           overwrite: "auto"
+//         });
+//       }
+//     });
+//   };
+
+//   const resetSiblings = () => {
+//     if (!enableHover) return;
+//     images.forEach((_, i) => {
+//       gsap.killTweensOf(`.card-${i}`);
+//       const baseTransform = transformStyles[i] || "none";
+//       gsap.to(`.card-${i}`, {
+//         transform: baseTransform,
+//         duration: 0.4,
+//         ease: "back.out(1.4)",
+//         overwrite: "auto"
+//       });
+//     });
+//   };
+
+//   return (
+//     <div
+//       className={`bounceCardsContainer ${className}`}
+//       style={{
+//         position: "relative",
+//         width: containerWidth,
+//         height: containerHeight
+//       }}
+//     >
+//       {images.map((src, idx) => (
+//         <div
+//           key={idx}
+//           className={`card card-${idx}`}
+//           style={{
+//             transform: transformStyles[idx] ?? "none"
+//           }}
+//           onMouseEnter={() => pushSiblings(idx)}
+//           onMouseLeave={resetSiblings}
+//         >
+//           <img className="image" src={src} alt={`card-${idx}`} />
+//         </div>
+//       ))}
+//     </div>
+//   );
+// }
+
+
+import { useEffect, useState } from "react";
 import { gsap } from "gsap";
 import "./BounceCards.css";
-import g1 from '../assets/g1.png';
+
 export default function BounceCards({
   className = "",
   images = [],
@@ -10,15 +143,33 @@ export default function BounceCards({
   animationDelay = 0.5,
   animationStagger = 0.06,
   easeType = "elastic.out(1, 0.8)",
-  transformStyles = [
-    "rotate(10deg) translate(-170px)",
-    "rotate(5deg) translate(-85px)",
-    "rotate(-3deg)",
-    "rotate(-10deg) translate(85px)",
-    "rotate(2deg) translate(170px)"
-  ],
   enableHover = true
 }) {
+  const [transformStyles, setTransformStyles] = useState([]);
+
+  useEffect(() => {
+    const screenWidth = window.innerWidth;
+
+    // Use smaller translations on smaller screens
+    const responsiveTransforms =
+      screenWidth < 768
+        ? [
+            "rotate(10deg) translate(-50px)",
+            "rotate(5deg) translate(-25px)",
+            "rotate(-3deg)",
+            "rotate(-10deg) translate(25px)",
+            "rotate(2deg) translate(50px)",
+          ]
+        : [
+            "rotate(10deg) translate(-170px)",
+            "rotate(5deg) translate(-85px)",
+            "rotate(-3deg)",
+            "rotate(-10deg) translate(85px)",
+            "rotate(2deg) translate(170px)",
+          ];
+    setTransformStyles(responsiveTransforms);
+  }, []);
+
   useEffect(() => {
     gsap.fromTo(
       ".card",
@@ -27,7 +178,7 @@ export default function BounceCards({
         scale: 1,
         stagger: animationStagger,
         ease: easeType,
-        delay: animationDelay
+        delay: animationDelay,
       }
     );
   }, [animationStagger, easeType, animationDelay]);
@@ -57,38 +208,76 @@ export default function BounceCards({
     }
   };
 
+  // const pushSiblings = (hoveredIdx) => {
+  //   if (!enableHover) return;
+  //   images.forEach((_, i) => {
+  //     gsap.killTweensOf(`.card-${i}`);
+
+  //     const baseTransform = transformStyles[i] || "none";
+
+  //     if (i === hoveredIdx) {
+  //       const noRotationTransform = getNoRotationTransform(baseTransform);
+  //       gsap.to(`.card-${i}`, {
+  //         transform: noRotationTransform,
+  //         duration: 0.4,
+  //         ease: "back.out(1.4)",
+  //         overwrite: "auto",
+  //       });
+  //     } else {
+  //       const offsetX = i < hoveredIdx ? -50 : 50; // smaller offset for mobile
+  //       const pushedTransform = getPushedTransform(baseTransform, offsetX);
+
+  //       const distance = Math.abs(hoveredIdx - i);
+  //       const delay = distance * 0.05;
+
+  //       gsap.to(`.card-${i}`, {
+  //         transform: pushedTransform,
+  //         duration: 0.4,
+  //         ease: "back.out(1.4)",
+  //         delay,
+  //         overwrite: "auto",
+  //       });
+  //     }
+  //   });
+  // };
   const pushSiblings = (hoveredIdx) => {
     if (!enableHover) return;
+  
+    const screenWidth = window.innerWidth;
+    const isMobile = screenWidth < 768;
+    const offsetAmount = isMobile ? 50 : 85; // original offset for large screens
+  
     images.forEach((_, i) => {
       gsap.killTweensOf(`.card-${i}`);
-
+  
       const baseTransform = transformStyles[i] || "none";
-
+  
       if (i === hoveredIdx) {
         const noRotationTransform = getNoRotationTransform(baseTransform);
         gsap.to(`.card-${i}`, {
           transform: noRotationTransform,
           duration: 0.4,
           ease: "back.out(1.4)",
-          overwrite: "auto"
+          overwrite: "auto",
         });
       } else {
-        const offsetX = i < hoveredIdx ? -160 : 160;
+        const offsetX = i < hoveredIdx ? -offsetAmount : offsetAmount;
         const pushedTransform = getPushedTransform(baseTransform, offsetX);
-
+  
         const distance = Math.abs(hoveredIdx - i);
         const delay = distance * 0.05;
-
+  
         gsap.to(`.card-${i}`, {
           transform: pushedTransform,
           duration: 0.4,
           ease: "back.out(1.4)",
           delay,
-          overwrite: "auto"
+          overwrite: "auto",
         });
       }
     });
   };
+  
 
   const resetSiblings = () => {
     if (!enableHover) return;
@@ -99,7 +288,7 @@ export default function BounceCards({
         transform: baseTransform,
         duration: 0.4,
         ease: "back.out(1.4)",
-        overwrite: "auto"
+        overwrite: "auto",
       });
     });
   };
@@ -110,7 +299,7 @@ export default function BounceCards({
       style={{
         position: "relative",
         width: containerWidth,
-        height: containerHeight
+        height: containerHeight,
       }}
     >
       {images.map((src, idx) => (
@@ -118,7 +307,7 @@ export default function BounceCards({
           key={idx}
           className={`card card-${idx}`}
           style={{
-            transform: transformStyles[idx] ?? "none"
+            transform: transformStyles[idx] ?? "none",
           }}
           onMouseEnter={() => pushSiblings(idx)}
           onMouseLeave={resetSiblings}

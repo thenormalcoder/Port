@@ -35,7 +35,7 @@ const Header1 = () => {
         
       </h1>
       <h2 className='text-white font-bold'>"Driven Computer Science student from NIT Manipur, specializing in full-stack development, DSA, and AI-powered solutions, focused on crafting innovative, scalable technologies through impactful projects."</h2>
-      <div className='flex px-20 justify-around mt-10 '>
+      <div className='flex md:px-20 md:justify-around justify-center items-center mt-10 '>
      <BasicButton1/>
      <BasicButton/>
       </div>

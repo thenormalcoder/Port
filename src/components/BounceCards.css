@@ -1,4 +1,4 @@
-.bounceCardsContainer {
+/* .bounceCardsContainer {
     position: relative;
     display: flex;
     justify-content: center;
@@ -33,4 +33,52 @@
         width:80%
       }
 
+  } */
+
+  .bounceCardsContainer {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    margin: auto;
   }
+  
+  .card {
+    position: absolute;
+    width: clamp(120px, 40%, 200px); /* Responsive width */
+    aspect-ratio: 1;
+    border: 5px solid #fff;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card .image {
+    width: 100%;
+    height: 120%;
+    object-fit: cover;
+  }
+  
+  @media (max-width: 768px) {
+    .bounceCardsContainer {
+      height: 300px;
+    }
+  
+    .card {
+      width: clamp(100px, 40vw, 150px);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .bounceCardsContainer {
+      height: 250px;
+    }
+  
+    .card {
+      width: clamp(80px, 45vw, 120px);
+    }
+  }
+  
